@@ -1,0 +1,18 @@
+frameworkVersion: "=1.15.2"
+
+service: tracking-pixel
+
+provider:
+  name: aws
+  runtime: python2.7
+  stage: dev
+  region: us-west-2
+
+functions:
+  ingest:
+    handler: handler.get_pixel
+    events:
+      - http:
+          path: /pixel
+          method: get
+          cors: true
