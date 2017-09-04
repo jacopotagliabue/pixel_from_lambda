@@ -9,7 +9,7 @@ provider:
   region: us-west-2
 
 functions:
-  ingest:
+  pixel:
     handler: handler.get_pixel
     events:
       - http:
