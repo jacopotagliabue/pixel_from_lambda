@@ -9,10 +9,14 @@ def get_pixel(event, context):
     """
     # print the full event in CloudWatch for debugging purposes
     print json.dumps(event)
+    # get all params in the string
+    params = event['queryStringParameters']
+    # print them for debug
+    print params
     # build a container object wrapping up useful information
     event_wrapper = {
         'eventId': str(uuid.uuid4()),  # assign a unique event id to the event
-        'trackingData': event['queryStringParameters']  # get parameter from the query string
+        'trackingData': params  # get parameter from the query string
     }
     # do something with the payload, e.g. send data to a message broker
     response = drop_message_to_broker(event_wrapper)
