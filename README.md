@@ -2,7 +2,7 @@
 How to easily serve a 1x1 GIF pixel from an Python, lambda-powered endpoint.
 
 ## Medium Post
-This project is the companion code for my Medium post on serving a pixel from AWS lambda. Please refer to the Medium blog [post](https://medium.com/@jacopotagliabue/serving-tensorflow-predictions-with-python-and-aws-lambda-facb4ab87ddd#.v01eyg8kh)  for a full explanation on the code structure.
+This project is the companion code for my Medium post on serving a pixel from AWS lambda. Please refer to the Medium blog [post](https://medium.com/@jacopotagliabue/serving-1x1-pixels-from-aws-lambda-endpoints-9eff73fe7631)  for a full explanation on the code structure.
 
 ## Deployment
 The project comes with a yml file ready to be deployed through [Serverless](https://serverless.com/). After you setup Serverless (don't forget the AWS credentials!), just cd into the prohect folder and launch:
