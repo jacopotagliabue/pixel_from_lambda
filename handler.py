@@ -1,5 +1,11 @@
 import json
 import uuid
+from message_broker_client import BrokerClient
+
+# as per Kaan Erturk comment, it's important to declare any object
+# that should live across requests, like a db client, OUTSIDE the function. In our example,
+# a client for a message broker is declared here and initialized just once.
+broker_client = BrokerClient()
 
 
 # https://{LAMBDA_URL}/{LAMBDA_ENV}/pixel?page=https%3A%2F%2Fgithub.com%2Fjacopotagliabue
@@ -31,6 +37,7 @@ def drop_message_to_broker(event):
     Stub for generic function processing the event
     """
     # drop event to a broker and return a response
+    broker_client.drop_message(event)
     return "Message {} dropped!".format(json.dumps(event))
 
 
